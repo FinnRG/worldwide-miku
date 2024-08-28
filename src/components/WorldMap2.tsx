@@ -3,6 +3,8 @@ import { MapContainer, GeoJSON } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import geoData from "./countries-coastline-10km.geo.json";
 import { GeoJsonObject } from "geojson";
+import mikuData from "../worldwide-miku.json";
+import L, { PathOptions } from "leaflet";
 
 // Define types for GeoJSON features and properties
 interface CountryProperties {
@@ -15,27 +17,42 @@ interface CountryFeature extends GeoJSON.Feature {
 }
 
 // Define the styles for countries
-const countryStyle = {
+const countryStyle: PathOptions = {
   fillColor: "gray",
   weight: 2,
   opacity: 1,
-  color: "white",
+  color: "gray",
+  fillOpacity: 0.7,
+};
+
+const activeCountryStyle: PathOptions = {
+  fillColor: "#12767b",
+  weight: 2,
+  opacity: 1,
+  color: "#12767b",
   fillOpacity: 0.7,
 };
 
 // Define the highlight style for hovered countries
-const highlightStyle = {
-  fillColor: "blue",
-  weight: 2,
+const highlightStyle: PathOptions = {
+  fillColor: "#82c8c5",
+  weight: 4,
   opacity: 1,
-  color: "white",
+  color: "#82c8c5",
   fillOpacity: 0.7,
 };
 
 const WorldMap2: React.FC = () => {
+  const isActiveCountry = (feat: CountryFeature | undefined) =>
+    mikuData.find((miku) =>
+      miku.tags.find((tag) => tag === `country:${feat?.properties.A3}`)
+    );
+
   // Function to handle hover (mouseover and mouseout) events
   const onEachCountry = (country: CountryFeature, layer: any) => {
-    const originalStyle = layer.options.style || countryStyle;
+    const originalStyle = isActiveCountry(country)
+      ? activeCountryStyle
+      : countryStyle;
 
     layer.on({
       mouseover: () => {
@@ -66,7 +83,9 @@ const WorldMap2: React.FC = () => {
       {geoData && (
         <GeoJSON
           data={geoData as GeoJsonObject} // Type assertion for geoData
-          style={countryStyle}
+          style={(feat) =>
+            isActiveCountry(feat) ? activeCountryStyle : countryStyle
+          }
           onEachFeature={onEachCountry}
         />
       )}
