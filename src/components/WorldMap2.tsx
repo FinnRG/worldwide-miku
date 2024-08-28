@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 import geoData from "./countries-coastline-10km.geo.json";
 import { GeoJsonObject } from "geojson";
 import mikuData from "../worldwide-miku.json";
-import L, { PathOptions } from "leaflet";
+import { PathOptions } from "leaflet";
 
 // Define types for GeoJSON features and properties
 interface CountryProperties {
@@ -42,7 +42,11 @@ const highlightStyle: PathOptions = {
   fillOpacity: 0.7,
 };
 
-const WorldMap2: React.FC = () => {
+interface WorldMap2Props {
+  onClick: (arg0: string) => unknown;
+}
+
+const WorldMap2: React.FC<WorldMap2Props> = ({ onClick }) => {
   const isActiveCountry = (feat: CountryFeature | undefined) =>
     mikuData.find((miku) =>
       miku.tags.find((tag) => tag === `country:${feat?.properties.A3}`)
@@ -72,6 +76,7 @@ const WorldMap2: React.FC = () => {
     const countryName =
       country.properties.A3 || country.properties.ADMIN || "Unknown Country";
     console.log("Clicked country:", countryName);
+    onClick(countryName);
   };
 
   return (
