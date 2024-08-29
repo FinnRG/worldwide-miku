@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { MapContainer, GeoJSON } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import geoData from "./countries-coastline-10km.geo.json";
@@ -43,10 +43,11 @@ const highlightStyle: PathOptions = {
 };
 
 interface WorldMap2Props {
-  onClick: (arg0: string) => unknown;
+  onClick: (arg0?: string) => unknown;
 }
 
 const WorldMap2: React.FC<WorldMap2Props> = ({ onClick }) => {
+  const selectedCountry = useRef<string | undefined>(undefined);
   const isActiveCountry = (feat: CountryFeature | undefined) =>
     mikuData.find((miku) =>
       miku.tags.find((tag) => tag === `country:${feat?.properties.A3}`)
@@ -63,16 +64,30 @@ const WorldMap2: React.FC<WorldMap2Props> = ({ onClick }) => {
         layer.setStyle(highlightStyle);
       },
       mouseout: () => {
-        layer.setStyle(originalStyle);
+        if (country.properties.A3 !== selectedCountry.current) {
+          layer.setStyle(originalStyle);
+        }
       },
       click: () => {
-        handleClick(country);
+        if (
+          selectedCountry.current === undefined ||
+          selectedCountry.current !== country.properties.A3
+        ) {
+          handleClick(country);
+          selectedCountry.current = country.properties.A3;
+          layer.setStyle(highlightStyle);
+        } else {
+          handleClick(undefined);
+          selectedCountry.current = undefined;
+          layer.setStyle(originalStyle);
+        }
       },
     });
   };
 
   // Function to handle the click event
-  const handleClick = (country: CountryFeature) => {
+  const handleClick = (country?: CountryFeature) => {
+    if (country === undefined) return onClick(undefined);
     const countryName =
       country.properties.A3 || country.properties.ADMIN || "Unknown Country";
     console.log("Clicked country:", countryName);
@@ -101,7 +116,11 @@ const WorldMap2: React.FC<WorldMap2Props> = ({ onClick }) => {
             <GeoJSON
               data={geoData as GeoJsonObject} // Type assertion for geoData
               style={(feat) =>
-                isActiveCountry(feat) ? activeCountryStyle : countryStyle
+                feat?.properties.A3 === selectedCountry.current
+                  ? highlightStyle
+                  : isActiveCountry(feat)
+                  ? activeCountryStyle
+                  : countryStyle
               }
               onEachFeature={onEachCountry}
             />
