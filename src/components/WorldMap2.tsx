@@ -80,21 +80,35 @@ const WorldMap2: React.FC<WorldMap2Props> = ({ onClick }) => {
   };
 
   return (
-    <MapContainer
-      style={{ height: "50vh", width: "100%" }}
-      zoom={2}
-      center={[20, 0]}
-    >
-      {geoData && (
-        <GeoJSON
-          data={geoData as GeoJsonObject} // Type assertion for geoData
-          style={(feat) =>
-            isActiveCountry(feat) ? activeCountryStyle : countryStyle
-          }
-          onEachFeature={onEachCountry}
-        />
-      )}
-    </MapContainer>
+    <div className="w-screen flex flex-col items-center">
+      <p className="text-center text-white">
+        Click on any country to see the associated regional Mikus!
+      </p>
+      <div className="w-full md:w-[80vw] lg:w-[60vw]">
+        <MapContainer
+          className="rounded-none md:rounded-lg"
+          style={{
+            height: "50vh",
+            width: "100%",
+            backgroundColor: "white",
+          }}
+          attributionControl={false}
+          zoom={2}
+          minZoom={2}
+          center={[20, 0]}
+        >
+          {geoData && (
+            <GeoJSON
+              data={geoData as GeoJsonObject} // Type assertion for geoData
+              style={(feat) =>
+                isActiveCountry(feat) ? activeCountryStyle : countryStyle
+              }
+              onEachFeature={onEachCountry}
+            />
+          )}
+        </MapContainer>
+      </div>
+    </div>
   );
 };
 
