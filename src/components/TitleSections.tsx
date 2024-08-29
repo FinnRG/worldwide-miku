@@ -21,7 +21,11 @@ export default function TitleSection() {
             size="lg"
             className="bg-white text-teal-500 hover:bg-teal-50 font-semibold shadow-md rounded-lg transition-all"
           >
-            <a href="https://forms.gle/Mx9QLVav3Ldc4fNe7" target="_blank">
+            <a
+              referrerPolicy="no-referrer"
+              href="https://forms.gle/Mx9QLVav3Ldc4fNe7"
+              target="_blank"
+            >
               Submit an image
               <ExternalLinkIcon className="ml-2 size-4" />
             </a>

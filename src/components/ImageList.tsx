@@ -1,8 +1,12 @@
 import mikuData from "../worldwide-miku.json";
 import { Masonry as Masonic } from "masonic";
-import { ExternalLinkIcon } from "@radix-ui/react-icons";
+import {
+  ExclamationTriangleIcon,
+  ExternalLinkIcon,
+} from "@radix-ui/react-icons";
 import { useState } from "react";
 import iso from "iso-3166-1";
+import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 
 interface ImageListProps {
   country?: string;
@@ -67,11 +71,34 @@ export default function ImageList({ country }: ImageListProps) {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 pb-16">
       {country && (
         <h2 className="text-center font-bold text-4xl mb-4">
           {iso.whereAlpha3(country)?.country}
         </h2>
+      )}
+      {data.length === 0 && (
+        <div className="flex flex-col items-center">
+          <Alert
+            variant="destructive"
+            className="w-full md:w-[60vw] lg:w-[40vw] bg-white"
+          >
+            <ExclamationTriangleIcon className="size-4" />
+            <AlertTitle>No results</AlertTitle>
+            <AlertDescription>
+              We currently do not know any Mikus for this region. You can
+              suggest new pictures in our{" "}
+              <a
+                className="underline"
+                target="_blank"
+                referrerPolicy="no-referrer"
+                href="https://forms.gle/Mx9QLVav3Ldc4fNe7"
+              >
+                online form
+              </a>
+            </AlertDescription>
+          </Alert>
+        </div>
       )}
       <Masonic
         key={country}
