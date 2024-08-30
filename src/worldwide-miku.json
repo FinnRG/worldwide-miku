@@ -544,5 +544,17 @@
     "tags": ["country:FRA"],
     "artistName": "qiandaiyiyu",
     "source": "https://x.com/qiandaiyiyu/status/1828710727474909581"
+  },
+  {
+    "id": 89,
+    "tags": ["country:HND"],
+    "artistName": "Moēxcloud",
+    "source": "https://x.com/moexcloud/status/1827883771737063679"
+  },
+  {
+    "id": 90,
+    "tags": ["country:POL"],
+    "artistName": "wernope",
+    "source": "https://x.com/wernope_/status/1827755541306699932"
   }
 ]
