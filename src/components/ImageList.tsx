@@ -36,7 +36,11 @@ const Image = ({ data: { id, artistName, source, tags } }: ImageProps) => {
 
   return (
     <div className="group" onTouchStart={() => setIsActive(!isActive)}>
-      <img loading="lazy" className="rounded-lg" src={`/mikus/${id}.jpg`} />
+      <img
+        loading="lazy"
+        className="rounded-lg border-2"
+        src={`/mikus/${id}.jpg`}
+      />
       <div
         className={`absolute inset-0 bg-black bg-opacity-50 opacity-0 ${
           isActive ? "opacity-100" : ""

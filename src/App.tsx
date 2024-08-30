@@ -10,7 +10,7 @@ import ImageList from "./components/ImageList";
 function App() {
   const [country, setCountry] = useState<string | undefined>(undefined);
   return (
-    <div className="bg-gradient-to-r from-teal-400 via-blue-400 to-cyan-500 text-white min-h-[100vh]">
+    <div className="dark:bg-black min-h-[100vh]">
       <TitleSection />
       <WorldMap2 onClick={(country) => setCountry(country)} />
       <ImageList country={country} />
