@@ -556,5 +556,65 @@
     "tags": ["country:POL"],
     "artistName": "wernope",
     "source": "https://x.com/wernope_/status/1827755541306699932"
+  },
+  {
+    "id": 91,
+    "tags": ["country:NZL"],
+    "artistName": "Mocha",
+    "source": "https://x.com/MochaJung/status/1828974350286106775"
+  },
+  {
+    "id": 92,
+    "tags": ["country:MEX"],
+    "artistName": "SaRuWolf",
+    "source": "https://x.com/SarukaiWolf/status/1829268004980625473"
+  },
+  {
+    "id": 93,
+    "tags": ["country:RUS"],
+    "artistName": "あきほしの",
+    "source": "https://x.com/aki_hoshino13/status/1828111885197287830"
+  },
+  {
+    "id": 94,
+    "tags": ["country:BRA"],
+    "artistName": "Tifa",
+    "source": "https://x.com/iluvei/status/1828893316492255432"
+  },
+  {
+    "id": 95,
+    "tags": ["country:PRT"],
+    "artistName": "MothyBea",
+    "source": "https://x.com/BeaMothy/status/1827723486850343065"
+  },
+  {
+    "id": 96,
+    "tags": ["country:HUN"],
+    "artistName": "KITA",
+    "source": "https://x.com/ZERO_XD5/status/1828061705626386646"
+  },
+  {
+    "id": 97,
+    "tags": ["country:USA", "extra:US-TX"],
+    "artistName": "ayu",
+    "source": "https://x.com/soliloquince/status/1827904408991977648"
+  },
+  {
+    "id": 98,
+    "tags": ["country:NLD"],
+    "artistName": "shiho",
+    "source": "https://x.com/shihosALT/status/1827834639467106713"
+  },
+  {
+    "id": 99,
+    "tags": ["country:CHN"],
+    "artistName": "尧了望yao_liao_wang",
+    "source": "https://x.com/yao_wang29/status/1828785613073760715"
+  },
+  {
+    "id": 100,
+    "tags": ["country:BRA"],
+    "artistName": "vmat",
+    "source": "https://x.com/vmatbox/status/1828538849393586366"
   }
 ]
