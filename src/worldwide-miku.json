@@ -376,5 +376,173 @@
     "tags": ["country:PAK"],
     "artistName": "fruberry01",
     "source": "https://x.com/fruberry01/status/1827703202978115593"
+  },
+  {
+    "id": 62,
+    "tags": ["country:MEX"],
+    "artistName": "mori",
+    "source": "https://x.com/morilatte_art/status/1828253630970950022"
+  },
+  {
+    "id": 63,
+    "tags": ["country:USA", "extra:US-FL"],
+    "artistName": "KierScribbles",
+    "source": "https://x.com/KierScribbles/status/1828205260579438798"
+  },
+  {
+    "id": 64,
+    "tags": ["country:THA"],
+    "artistName": "น้องกรปั่นงาน",
+    "source": "https://x.com/Kkorn_tube/status/1828042803441709452"
+  },
+  {
+    "id": 65,
+    "tags": ["country:TWN"],
+    "artistName": "ﾊﾙ兎",
+    "source": "https://x.com/harubun_/status/1828558021934403765"
+  },
+  {
+    "id": 66,
+    "tags": [
+      "country:JPN",
+      "country:CHN",
+      "country:KOR",
+      "tag:3-chars",
+      "char:gakupo"
+    ],
+    "artistName": "Nanami",
+    "source": "https://x.com/N96_poid/status/1828616113724498219"
+  },
+  {
+    "id": 67,
+    "tags": ["country:MEX"],
+    "artistName": "Mely",
+    "source": "https://x.com/oniimely/status/1828542415722160160"
+  },
+  {
+    "id": 68,
+    "tags": ["country:PAK", "country:IND"],
+    "artistName": "Sunny",
+    "source": "https://x.com/sunpie313/status/1827416131092504814"
+  },
+  {
+    "id": 69,
+    "tags": ["country:VNM"],
+    "artistName": "Azuriel",
+    "source": "https://x.com/TheAzureCiel/status/1827753284947611855"
+  },
+  {
+    "id": 70,
+    "tags": ["country:HUN"],
+    "artistName": "sir ryan",
+    "source": "https://x.com/ryansir_/status/1827490379794395607"
+  },
+  {
+    "id": 71,
+    "tags": ["country:GHA"],
+    "artistName": "Milk 459",
+    "source": "https://x.com/milk_459/status/1827611855495282885"
+  },
+  {
+    "id": 72,
+    "tags": ["country:GHA"],
+    "artistName": "Yuki",
+    "source": "https://x.com/YukiTheOni/status/1763023261338632548"
+  },
+  {
+    "id": 73,
+    "tags": ["country:DEU"],
+    "artistName": "canniballs",
+    "source": "https://x.com/rubbercanni/status/1827621930519728484"
+  },
+  {
+    "id": 74,
+    "tags": ["country:VNM"],
+    "artistName": "hanny",
+    "source": "https://x.com/Uirusu_chan/status/1827475774770966587"
+  },
+  {
+    "id": 75,
+    "tags": ["country:USA"],
+    "artistName": "MOLENAIDE",
+    "source": "https://x.com/MOLENAIDE/status/1827058810655273310"
+  },
+  {
+    "id": 76,
+    "tags": ["country:VNM"],
+    "artistName": "cinn",
+    "source": "https://x.com/ci____nn/status/1827591197726273667"
+  },
+  {
+    "id": 77,
+    "tags": ["country:FIN"],
+    "artistName": "Doodlelot",
+    "source": "https://x.com/Doodlelot/status/1827406640280432689"
+  },
+  {
+    "id": 78,
+    "tags": ["country:PAK"],
+    "artistName": "Moon",
+    "source": "https://x.com/moonlightbasket/status/1827483535940190623"
+  },
+  {
+    "id": 79,
+    "tags": ["country:PAK"],
+    "artistName": "Endy",
+    "source": "https://x.com/EndoverEndy/status/1827396573455655211"
+  },
+  {
+    "id": 80,
+    "tags": ["country:BRA"],
+    "artistName": "ruru",
+    "source": "https://x.com/i_luv_ruru/status/1826881661058818355"
+  },
+  {
+    "id": 81,
+    "tags": ["country:PRT"],
+    "artistName": "vanessa",
+    "source": "https://x.com/VollCorte/status/1829064279527419959"
+  },
+  {
+    "id": 82,
+    "tags": ["country:CAN"],
+    "artistName": "Sugaaaa",
+    "source": "https://x.com/SSugaaaaa___/status/1828857655642730715"
+  },
+  {
+    "id": 83,
+    "tags": ["country:BGR"],
+    "artistName": "Yubuki",
+    "source": "https://x.com/yubuki_i/status/1828848292639428798"
+  },
+  {
+    "id": 84,
+    "tags": ["country:SVK"],
+    "artistName": "Ali",
+    "source": "https://x.com/alisandor_/status/1828483196696002824"
+  },
+  {
+    "id": 85,
+    "tags": ["country:PSE"],
+    "artistName": "AKi",
+    "source": "https://x.com/t0fuwa/status/1828561049043509693"
+  },
+  {
+    "id": 86,
+    "tags": ["country:BRA"],
+    "artistName": "Bata",
+    "source": "https://x.com/bata_zero/status/1826460292655796591"
+  },
+  {
+    "id": 87,
+    "tags": ["country:VEN"],
+    "artistName": "MUNK",
+    "source": "https://x.com/mulemount/status/1827041157798396409"
+  },
+  {
+    "id": 88,
+    "tags": ["country:FRA"],
+    "artistName": "qiandaiyiyu",
+    "source": "https://x.com/qiandaiyiyu/status/1828710727474909581"
   }
 ]

@@ -25,7 +25,7 @@ const tagsToCountries = (tags: string[]) =>
   tags
     .filter((tag) => tag.startsWith("country:"))
     .map((tag) => tag.split("country:")[1])
-    .map((alpha3) => iso.whereAlpha3(alpha3)?.country)
+    .map((alpha3) => toCountry(alpha3))
     .filter((c) => c !== undefined)
     .join(", ");
 
@@ -61,6 +61,9 @@ const Image = ({ data: { id, artistName, source, tags } }: ImageProps) => {
   );
 };
 
+const toCountry = (alpha3: string) =>
+  iso.whereAlpha3(alpha3)?.country.replace(", Province of China", "");
+
 export default function ImageList({ country }: ImageListProps) {
   let data = mikuData;
 
@@ -74,7 +77,7 @@ export default function ImageList({ country }: ImageListProps) {
     <div className="p-4 pb-16">
       {country && (
         <h2 className="text-center font-bold text-4xl mb-4">
-          {iso.whereAlpha3(country)?.country}
+          {toCountry(country)}
         </h2>
       )}
       {data.length === 0 && (
