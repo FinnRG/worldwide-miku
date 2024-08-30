@@ -80,7 +80,7 @@ export default function ImageList({ country }: ImageListProps) {
   return (
     <div className="p-4 pb-16">
       {country && (
-        <h2 className="text-center font-bold text-4xl mb-4">
+        <h2 className="text-center font-bold text-4xl mb-4 dark:text-white">
           {toCountry(country)}
         </h2>
       )}

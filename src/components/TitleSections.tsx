@@ -1,7 +1,15 @@
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
+import Counter from "./Counter";
+import mikuData from "../worldwide-miku.json";
 
 export default function TitleSection() {
+  const numCountries = new Set(
+    mikuData.flatMap((miku) =>
+      miku.tags.filter((tag) => tag.startsWith("country:"))
+    )
+  ).size;
+
   return (
     <div className="py-5">
       <div className="container mx-auto text-center">
@@ -17,7 +25,11 @@ export default function TitleSection() {
           suggesting images is greatly appreciated. Anyone can suggest new
           images by clicking the button below.
         </p>
-        <div className="mt-8">
+        <div className="my-8 flex justify-center gap-32">
+          <Counter endNumber={mikuData.length} subtitle="Images" />
+          <Counter endNumber={numCountries} subtitle="Countries" />
+        </div>
+        <div>
           <Button
             asChild
             size="lg"
