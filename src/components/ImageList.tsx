@@ -4,7 +4,7 @@ import {
   ExclamationTriangleIcon,
   ExternalLinkIcon,
 } from "@radix-ui/react-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import iso from "iso-3166-1";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 
@@ -68,14 +68,42 @@ const Image = ({ data: { id, artistName, source, tags } }: ImageProps) => {
 const toCountry = (alpha3: string) =>
   iso.whereAlpha3(alpha3)?.country.replace(", Province of China", "");
 
-export default function ImageList({ country }: ImageListProps) {
-  let data = mikuData;
+function shuffle(array: any[]) {
+  let currentIndex = array.length;
 
-  if (country) {
-    data = mikuData.filter((miku) =>
-      miku.tags.find((tag) => tag === `country:${country}`)
-    );
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
+}
+
+export default function ImageList({ country }: ImageListProps) {
+  const [data, setData] = useState(mikuData);
+
+  useEffect(() => {
+    let data = mikuData;
+
+    if (country) {
+      data = mikuData.filter((miku) =>
+        miku.tags.find((tag) => tag === `country:${country}`)
+      );
+    }
+
+    setData(
+      data
+        .map((value) => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value)
+    );
+  }, [country]);
 
   return (
     <div className="p-4 pb-16">
@@ -108,7 +136,7 @@ export default function ImageList({ country }: ImageListProps) {
         </div>
       )}
       <Masonic
-        key={country}
+        key={data[0].id ?? ""}
         rowGutter={10}
         columnGutter={10}
         maxColumnCount={3}
