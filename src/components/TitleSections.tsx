@@ -29,9 +29,9 @@ export default function TitleSection({ setCountry }: TitleSectionProps) {
 
   const onRandomClick = () => {
     setCountry && setCountry(getRandomCountry());
-    document.getElementById("image-list")?.scrollIntoView({
-      block: "start",
-      inline: "nearest",
+    const imageList = document.getElementById("map-container");
+    imageList?.scrollIntoView({
+      inline: "end",
       behavior: "smooth",
     });
   };

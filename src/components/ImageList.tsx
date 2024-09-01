@@ -35,7 +35,10 @@ const Image = ({ data: { id, artistName, source, tags } }: ImageProps) => {
   const countries = tagsToCountries(tags);
 
   return (
-    <div className="group" onTouchStart={() => setIsActive(!isActive)}>
+    <div
+      className="group min-h-[600px]"
+      onTouchStart={() => setIsActive(!isActive)}
+    >
       <img
         loading="lazy"
         className="rounded-lg border-2"
@@ -44,7 +47,7 @@ const Image = ({ data: { id, artistName, source, tags } }: ImageProps) => {
       <div
         className={`absolute inset-0 bg-black bg-opacity-50 opacity-0 ${
           isActive ? "opacity-100" : ""
-        } group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex flex-col justify-center items-center p-4`}
+        } group-hover:opacity-100 ease-out transition-opacity duration-300 rounded-lg flex flex-col justify-center items-center p-4`}
       >
         <h2 className="text-white text-center text-xl font-bold mb-2">
           {countries}
