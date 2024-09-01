@@ -68,23 +68,6 @@ const Image = ({ data: { id, artistName, source, tags } }: ImageProps) => {
 const toCountry = (alpha3: string) =>
   iso.whereAlpha3(alpha3)?.country.replace(", Province of China", "");
 
-function shuffle(array: any[]) {
-  let currentIndex = array.length;
-
-  // While there remain elements to shuffle...
-  while (currentIndex != 0) {
-    // Pick a remaining element...
-    let randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-}
-
 export default function ImageList({ country }: ImageListProps) {
   const [data, setData] = useState(mikuData);
 
@@ -136,7 +119,7 @@ export default function ImageList({ country }: ImageListProps) {
         </div>
       )}
       <Masonic
-        key={data[0].id ?? ""}
+        key={data[0]?.id ?? ""}
         rowGutter={10}
         columnGutter={10}
         maxColumnCount={3}
