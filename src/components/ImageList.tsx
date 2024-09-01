@@ -66,7 +66,9 @@ const Image = ({ data: { id, artistName, source, tags } }: ImageProps) => {
 };
 
 const toCountry = (alpha3: string) =>
-  iso.whereAlpha3(alpha3)?.country.replace(", Province of China", "");
+  alpha3 === "XKX"
+    ? "Kosovo"
+    : iso.whereAlpha3(alpha3)?.country.replace(", Province of China", "");
 
 export default function ImageList({ country }: ImageListProps) {
   const [data, setData] = useState(mikuData);

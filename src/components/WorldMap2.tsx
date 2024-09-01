@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { MapContainer, GeoJSON } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import geoData from "./countries-coastline-10km.geo.json";
+import geoData from "./world-data.geo.json";
 import { GeoJsonObject } from "geojson";
 import mikuData from "../worldwide-miku.json";
 import { PathOptions } from "leaflet";
