@@ -26,7 +26,7 @@ const Counter = ({ endNumber, subtitle }: CounterProps) => {
   }, [endNumber]);
 
   return (
-    <div className="text-center p-4">
+    <div className="text-center p-4 min-w-[130px]">
       <div className={"text-teal-500 text-5xl font-bold"}>{count}</div>
       <div className={"text-teal-500 text-xl mt-2"}>{subtitle}</div>
     </div>

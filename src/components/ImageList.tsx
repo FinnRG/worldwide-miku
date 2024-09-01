@@ -92,11 +92,12 @@ export default function ImageList({ country }: ImageListProps) {
 
   return (
     <div className="p-4 pb-16">
-      {country && (
-        <h2 className="text-center font-bold text-4xl mb-4 dark:text-white">
-          {toCountry(country)}
-        </h2>
-      )}
+      <h2
+        id="image-list"
+        className="text-center font-bold text-4xl mb-4 dark:text-white"
+      >
+        {country && toCountry(country)}
+      </h2>
       {data.length === 0 && (
         <div className="flex flex-col items-center">
           <Alert

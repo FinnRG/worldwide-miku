@@ -96,7 +96,7 @@ const WorldMap2: React.FC<WorldMap2Props> = ({ onClick }) => {
 
   return (
     <div className="w-screen flex flex-col items-center mt-4">
-      <p className="text-center dark:text-white text-black">
+      <p className="text-center py-2 pb-2 dark:text-white text-black">
         Click on any country to see the associated regional Mikus!
       </p>
       <div className="w-full md:w-[80vw] lg:w-[60vw]">

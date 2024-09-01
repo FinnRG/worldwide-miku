@@ -11,7 +11,7 @@ function App() {
   const [country, setCountry] = useState<string | undefined>(undefined);
   return (
     <div className="dark:bg-black min-h-[100vh]">
-      <TitleSection />
+      <TitleSection setCountry={setCountry} />
       <WorldMap2 onClick={(country) => setCountry(country)} />
       <ImageList country={country} />
     </div>
